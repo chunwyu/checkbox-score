@@ -24,7 +24,7 @@
     {
         display: flex;
         flex-flow: column;
-        width: 300px;
+        width: 350px;
     }
 
     .category-item
@@ -33,19 +33,14 @@
         flex-flow: row;
         width: 100%;
         min-height: 30px;
-        margin-bottom: 5px;
-    }
-
-    .checkbox
-    {
-        display: block;
-        width: 20px;
     }
 
     .checkbox-label
     {
         display: block;
-        width: 350px;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     h1
@@ -63,17 +58,15 @@
         <h1>{category}</h1>
         {#each games as game}
         <div class="category-item">
-            <div class="checkbox">
+            <label class="checkbox-label">
                 <input 
                     type="checkbox"
                     id="cbox_{game}"
                     value={game}
                     bind:group={playedGames}
                 />
-            </div>
-            <div class="checkbox-label">
-                <label for="cbox_{game}">{game}</label>
-            </div>
+                    {game}
+            </label>
         </div>
         {/each}
     </div>
