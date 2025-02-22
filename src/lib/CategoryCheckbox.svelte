@@ -13,13 +13,16 @@
     {
         display: flex;
         flex-flow: row wrap;
+        padding: 10px;
+
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .category
     {
         display: flex;
         flex-flow: column;
-        width: 400px;
+        width: 200px;
     }
 
     .category-item
@@ -47,6 +50,26 @@
         display: block;
         width: 100%;
     }
+
+    .total-score-box
+    {
+        margin: auto;
+        width: 50%;
+        border: 1px solid #990000;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .total-score-text
+    {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .score
+    {
+        font-size: 40px;
+        text-align: center;
+    }
 </style>
 
 <div class="checkbox-set-container">
@@ -72,4 +95,12 @@
     {/each}
 </div>
 
-<p>{playedGames.length} / {totalGames}</p>
+<div class="total-score-box">
+    <div class="total-score-text">
+        <p>Total score</p>
+    </div>
+
+    <div class="score">
+        <p>{playedGames.length} / {totalGames}</p>
+    </div>
+</div>
