@@ -22,6 +22,8 @@
 
 <h1>Variety Gamer Score 2025</h1>
 <CategoryCheckbox categories={categories} />
+<br />
+<hr>
 
 <h2>Bonus Round: Indie Games</h2>
 <CategoryCheckbox categories={indies} />
