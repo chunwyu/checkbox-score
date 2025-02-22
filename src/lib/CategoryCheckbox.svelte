@@ -2,14 +2,57 @@
     let { categories } = $props();
 </script>
 
-<div>
+<style>
+    .checkbox-set-container
+    {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .category
+    {
+        display: flex;
+        flex-flow: column;
+        width: 400px;
+    }
+
+    .category-item
+    {
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        height: 30px;
+    }
+
+    .checkbox
+    {
+        display: block;
+        width: 20px;
+    }
+
+    .checkbox-label
+    {
+        display: block;
+        width: 350px;
+    }
+
+    h1
+    {
+        display: block;
+        width: 100%;
+    }
+</style>
+
+<div class="checkbox-set-container">
     {#each Object.entries(categories) as [category, games]}
-    <h1>{category}</h1>
+    <div class="category">
+        <h1>{category}</h1>
         {#each games as game}
-        <div>
-            <input type="checkbox" id="cbox_{game}" />
-            <label for="cbox_{game}">{game}</label>
+        <div class="category-item">
+            <div class="checkbox"><input type="checkbox" id="cbox_{game}" /></div>
+            <div class="checkbox-label"><label for="cbox_{game}">{game}</label></div>
         </div>
         {/each}
+    </div>
     {/each}
 </div>

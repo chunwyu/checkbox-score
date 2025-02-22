@@ -13,5 +13,5 @@
     };
 </script>
 
-<h1>wtf?</h1>
+<h1>Variety Gamer Score 2025</h1>
 <CategoryCheckbox categories={categoriesList} />
