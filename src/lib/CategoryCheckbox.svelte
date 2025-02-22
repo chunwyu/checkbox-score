@@ -1,4 +1,6 @@
 <script>
+	import ScoreBox from "./ScoreBox.svelte";
+
     let { categories } = $props();
     /**
 	 * @type {string | any[]}
@@ -51,27 +53,9 @@
         display: block;
         width: 100%;
     }
-
-    .total-score-box
-    {
-        margin: auto;
-        width: 50%;
-        border: 1px solid #990000;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .total-score-text
-    {
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .score
-    {
-        font-size: 40px;
-        text-align: center;
-    }
 </style>
+
+<ScoreBox playedGames={playedGames.length} totalGames={totalGames} />
 
 <div class="checkbox-set-container">
     {#each Object.entries(categories) as [category, games]}
@@ -96,12 +80,4 @@
     {/each}
 </div>
 
-<div class="total-score-box">
-    <div class="total-score-text">
-        <p>Total score</p>
-    </div>
-
-    <div class="score">
-        <p>{playedGames.length} / {totalGames}</p>
-    </div>
-</div>
+<ScoreBox playedGames={playedGames.length} totalGames={totalGames} />
