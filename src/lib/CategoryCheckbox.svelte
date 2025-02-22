@@ -22,7 +22,7 @@
     {
         display: flex;
         flex-flow: column;
-        width: 200px;
+        width: 300px;
     }
 
     .category-item
@@ -30,7 +30,8 @@
         display: flex;
         flex-flow: row;
         width: 100%;
-        height: 30px;
+        min-height: 30px;
+        margin-bottom: 5px;
     }
 
     .checkbox
