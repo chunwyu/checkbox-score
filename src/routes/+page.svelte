@@ -1,17 +1,16 @@
 <script lang="ts">
     import CategoryCheckbox from "$lib/CategoryCheckbox.svelte";
-    let categoriesList = {
-        "FPS": [
-            "Call of Duty",
-            "Bioshock"
-        ],
-        "RPG": [
-            "Final Fantasy",
-            "Mass Effect",
-            "Baldur's Gate"
-        ]
-    };
+    import categories from "$lib/GameCategoryList.json";
 </script>
 
+<style>
+    h1
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        text-align: center;
+    }
+</style>
+
 <h1>Variety Gamer Score 2025</h1>
-<CategoryCheckbox categories={categoriesList} />
+<CategoryCheckbox categories={categories} />
