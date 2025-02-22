@@ -1,5 +1,11 @@
 <script>
     let { categories } = $props();
+    /**
+	 * @type {string | any[]}
+	 */
+    let playedGames = $state([]);
+
+    let totalGames = Object.entries(categories).reduce((total, currCategory) => total + currCategory[1].length, 0);
 </script>
 
 <style>
@@ -49,10 +55,21 @@
         <h1>{category}</h1>
         {#each games as game}
         <div class="category-item">
-            <div class="checkbox"><input type="checkbox" id="cbox_{game}" /></div>
-            <div class="checkbox-label"><label for="cbox_{game}">{game}</label></div>
+            <div class="checkbox">
+                <input 
+                    type="checkbox"
+                    id="cbox_{game}"
+                    value={game}
+                    bind:group={playedGames}
+                />
+            </div>
+            <div class="checkbox-label">
+                <label for="cbox_{game}">{game}</label>
+            </div>
         </div>
         {/each}
     </div>
     {/each}
 </div>
+
+<p>{playedGames.length} / {totalGames}</p>
